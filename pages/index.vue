@@ -12,7 +12,7 @@
 import HeaderHero from "@/components/section/HeaderHero.vue"
 import Discount from "@/components/section/Discount.vue"
 import Categories from "@/components/section/Categories.vue"
-import recentProducts from "@/components/section/recentProducts.vue"
+import recentProducts from "@/components/section/RecentProducts.vue"
 
 
 
