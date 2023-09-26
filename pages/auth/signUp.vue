@@ -101,7 +101,7 @@ export default {
   methods: {
     async doRegister() {
       let mydata = await axios
-        .post("http://127.0.0.1:8000/api/shop/UserCreate/", {
+        .post("https://rootakhti-yazd.ir/api/shop/UserCreate/", {
           "username": this.username,
           "password": this.password,
           "first_name": this.first_name,

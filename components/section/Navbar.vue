@@ -193,12 +193,12 @@ export default {
     },
     async getCategories() {
       let mydata = await axios
-        .get("http://127.0.0.1:8000/api/shop/Category_main_api/")
+        .get("https://rootakhti-yazd.ir/api/shop/Category_main_api/")
         .then((response) => (this.categories = response.data));
     },
     async getCategoriesBlog() {
       let mydata = await axios
-        .get("http://127.0.0.1:8000/api/blog/Category_main_api/")
+        .get("https://rootakhti-yazd.ir/api/blog/Category_main_api/")
         .then((response) => (this.categoriesBlog = response.data));
     },
     search() {

@@ -71,7 +71,7 @@ export default {
     async getData() {
       let mydata = await axios
         .get(
-          `http://127.0.0.1:8000/api/blog/blog_retrieve/${this.$route.params.id}/`
+          `https://rootakhti-yazd.ir/api/blog/blog_retrieve/${this.$route.params.id}/`
         )
         .then((response) => (this.data1 = response.data));
       this.loading = false;
@@ -79,7 +79,7 @@ export default {
     },
     async getCategory() {
       let mydata = await axios
-        .get(`http://127.0.0.1:8000/api/blog/List_category/`)
+        .get(`https://rootakhti-yazd.ir/api/blog/List_category/`)
         .then((response) => (this.category = response.data));
       this.loadingCategory = false;
     },

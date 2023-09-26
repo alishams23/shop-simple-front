@@ -59,7 +59,7 @@ export default {
     async getData() {
 
       let mydata = await axios
-        .get("http://127.0.0.1:8000/api/shop/category_discount/")
+        .get("https://rootakhti-yazd.ir/api/shop/category_discount/")
         .then((response) => (this.data = response.data.results));
 
 
