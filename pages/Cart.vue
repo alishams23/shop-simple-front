@@ -67,7 +67,8 @@
       </div>
       <div v-if="loading == true" class="d-flex justify-content-canter flex-row pt-5">
         <div class="col-12 text-center">
-          <img src="@/assets/loading.gif" height="30" />
+          <Loading />
+
         </div>
       </div>
 
@@ -169,13 +170,16 @@
                 </button>
                 <div v-if="loadingSubmit == true" class="d-flex justify-content-canter flex-row pt-5">
                   <div class="col-12 text-center">
-                    <img src="@/assets/loading.gif" height="30" />
+                    <Loading />
+
                   </div>
                 </div>
               </div>
 
               <div class="cart-total-bottom pp-checkout">
-                <a href="#"><img src="img/checkoutpp.jpg" alt="" class="img-responsive" /></a>
+                <a href="#">
+                  <!-- <img src="img/checkoutpp.jpg" alt="" class="img-responsive" /> -->
+                </a>
               </div>
             </div>
           </div>

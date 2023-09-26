@@ -25,22 +25,22 @@
       <div class="d-flex justify-content-around pt-3 border-bottom">
         <a class="d-flex flex-column align-items-center">
           <div>
-            <img src="@/assets/2.jpeg" height="46" alt="" />
+            <!-- <img src="@/assets/2.jpeg" height="46" alt="" /> -->
           </div>
           <div class="py-4">ضمانت هفت روز بازگشت کالا</div>
         </a><a class="d-flex flex-column align-items-center">
           <div>
-            <img src="@/assets/3.jpeg" height="46" alt="" />
+            <!-- <img src="@/assets/3.jpeg" height="46" alt="" /> -->
           </div>
           <div class="py-3">پرداخت امن اینترنتی</div>
         </a><a class="d-flex flex-column align-items-center">
           <div>
-            <img src="@/assets/4.jpeg" height="46" alt="" />
+            <!-- <img src="@/assets/4.jpeg" height="46" alt="" /> -->
           </div>
           <div class="py-4">ضمانت کیفیت کالا</div>
         </a><a class="d-flex flex-column align-items-center">
           <div>
-            <img src="@/assets/1.jpeg" height="46" alt="" />
+            <!-- <img src="@/assets/1.jpeg" height="46" alt="" /> -->
           </div>
           <div class="py-4">ارسال رایگان بالای ۱ میلیون</div>
         </a>

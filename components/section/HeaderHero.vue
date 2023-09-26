@@ -46,11 +46,12 @@
           </div>
         </div>
       </div>
-      <!-- <div v-if="loading == true" class="d-flex justify-content-canter flex-row py-5">
+      <div v-if="loading == true" class="d-flex justify-content-canter flex-row py-5">
         <div class="col-12 text-center">
-          <img src="@/assets/loading.gif" height="30" />
+                          <Loading />
+
         </div>
-      </div> -->
+      </div>
       <Loading v-if="loading == true" />
     </div>
   </div>

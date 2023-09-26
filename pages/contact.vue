@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="banner-callus image-bd effect_img2">
-                    <a href="#"><img src="img/banner/h1_b7.jpg" alt="" class="img-responsive"></a>
+                    <!-- <a href="#"><img src="img/banner/h1_b7.jpg" alt="" class="img-responsive"></a> -->
                     <div class="box-center v2">
                         <p>Call us free : + (123) 456 789</p>
                         <a href="#" class="btn-callus">Shop now</a>

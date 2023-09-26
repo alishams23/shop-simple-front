@@ -60,7 +60,7 @@
             <div>
               <div class="d-flex justify-content-canter flex-row pt-5 mt-5">
                 <div class="col-12 text-center">
-                  <img src="@/assets/loading.gif" height="30" />
+                  <Loading />
                 </div>
               </div>
 
