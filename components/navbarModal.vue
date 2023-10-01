@@ -1,6 +1,6 @@
 <template>
   <div
-    class="d-xl-none"
+    class="d-none"
     :class="dNone == true ? 'd-none' : ''"
     v-if="categories != null"
   >
