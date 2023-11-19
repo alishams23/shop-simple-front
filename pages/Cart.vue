@@ -216,7 +216,7 @@ export default {
     async getData() {
       this.loading = true;
       let mydata = await axios
-        .get("http://127.0.0.1:8000/api/shop/ordersList/", {
+        .get("https://rootakhti-yazd.ir/api/shop/ordersList/", {
           headers: {
             "Content-type": "application/json",
             Accept: "application/json",
@@ -246,7 +246,7 @@ export default {
     async addToCard(data, index) {
       try {
         await axios
-          .get(`http://127.0.0.1:8000/api/shop/order_add/${data.id}/`, {
+          .get(`https://rootakhti-yazd.ir/api/shop/order_add/${data.id}/`, {
             headers: {
               "Content-type": "application/json",
               Accept: "application/json",
@@ -261,7 +261,7 @@ export default {
     async deleteToCard(data, index) {
       try {
         await axios
-          .get(`http://127.0.0.1:8000/api/shop/order_remove/${data.id}/`, {
+          .get(`https://rootakhti-yazd.ir/api/shop/order_remove/${data.id}/`, {
             headers: {
               "Content-type": "application/json",
               Accept: "application/json",
@@ -277,7 +277,7 @@ export default {
       this.loadingSubmit = true;
       await axios
         .put(
-          `http://127.0.0.1:8000/api/shop/Address_order_update/${this.data1.id}/`,
+          `https://rootakhti-yazd.ir/api/shop/Address_order_update/${this.data1.id}/`,
           {
             state: this.state,
             city: this.city,
@@ -303,7 +303,7 @@ export default {
         .then((response) => {
           axios
             .get(
-              `http://127.0.0.1:8000/api/wallet/Pay_api/?pk=${this.data1.id}`,
+              `https://rootakhti-yazd.ir/api/wallet/Pay_api/?pk=${this.data1.id}`,
 
               {
                 headers: {

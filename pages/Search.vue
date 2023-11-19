@@ -241,7 +241,7 @@ export default {
       this.data1 = [];
       this.loading = true;
 
-      let urlAddress = `http://127.0.0.1:8000/api/shop/searchlistview/?search`;
+      let urlAddress = `https://rootakhti-yazd.ir/api/shop/searchlistview/?search`;
       if (this.searchText != null) urlAddress += `=${this.searchText}`;
       if (this.currentCategory != null)
         urlAddress += `&category=${this.currentCategory}`;
@@ -263,7 +263,7 @@ export default {
     },
     async getCategories() {
       let mydata = await axios
-        .get(`http://127.0.0.1:8000/api/shop/Categories_api/`)
+        .get(`https://rootakhti-yazd.ir/api/shop/Categories_api/`)
         .then((response) => {
           this.categories = response.data;
           this.categoriesInstance = response.data;
@@ -271,7 +271,7 @@ export default {
     },
     async getCompany() {
       let mydata = await axios
-        .get(`http://127.0.0.1:8000/api/shop/Company_list/`)
+        .get(`https://rootakhti-yazd.ir/api/shop/Company_list/`)
         .then((response) => {
           this.company = response.data;
           this.companyInstance = response.data;

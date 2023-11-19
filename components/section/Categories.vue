@@ -62,14 +62,14 @@ export default {
   methods: {
     async getCategory() {
       let mydata = await axios
-        .get("http://127.0.0.1:8000/api/shop/main_page/")
+        .get("https://rootakhti-yazd.ir/api/shop/main_page/")
         .then((response) => (this.category = response.data));
       for (let index = 0; index < this.category.length; index++) {
         if (this.indexActive == null)
           this.indexActive = this.category[index].id;
         let mydata = await axios
           .get(
-            `http://127.0.0.1:8000/api/shop/category_retrieve/${this.category[index].id}`
+            `https://rootakhti-yazd.ir/api/shop/category_retrieve/${this.category[index].id}`
           )
           .then(
             (response) =>

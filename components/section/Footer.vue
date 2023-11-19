@@ -52,7 +52,7 @@
             ></a> -->
           </div>
           <div class="d-flex flex-column align-items-end ms-4 mb-3 ">
-              <a href="http://127.0.0.1:8000/api/shop/enamad/" class=" d-flex flex-column align-items-center border rounded-10 p-2" style="">
+              <a href="https://rootakhti-yazd.ir/api/shop/enamad/" class=" d-flex flex-column align-items-center border rounded-10 p-2" style="">
                 <img src="/enamad.png" style="width:70px">
                 <div class="d-flex flex-column align-items-center pt-2">
                

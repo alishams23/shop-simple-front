@@ -97,7 +97,7 @@ export default {
     async SendSms() {
       this.loadingSend = true;
       try {
-        await fetch("http://127.0.0.1:8000/api/shop/Send_code/", {
+        await fetch("https://rootakhti-yazd.ir/api/shop/Send_code/", {
         headers: {
           "Content-type": "application/json",
           Accept: "application/json",
@@ -119,7 +119,7 @@ export default {
         if (this.code != null) {
           this.statusCheck = false;
           let statusCheckApi = await fetch(
-            `http://127.0.0.1:8000/api/shop/Code_check/?code=${this.code}`,
+            `https://rootakhti-yazd.ir/api/shop/Code_check/?code=${this.code}`,
             {
               headers: {
                 "Content-type": "application/json",

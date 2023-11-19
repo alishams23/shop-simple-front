@@ -74,13 +74,13 @@ export default {
   methods: {
     async getData() {
       let mydata = await axios
-        .get("http://127.0.0.1:8000/api/shop/heder_image/")
+        .get("https://rootakhti-yazd.ir/api/shop/heder_image/")
         .then((response) => (this.data1 = response.data));
       this.getDataLeft();
     },
     async getDataLeft() {
       let mydata = await axios
-        .get("http://127.0.0.1:8000/api/shop/heder_corner_image/")
+        .get("https://rootakhti-yazd.ir/api/shop/heder_corner_image/")
         .then((response) => (this.data2 = response.data));
       this.loading = false
     },
