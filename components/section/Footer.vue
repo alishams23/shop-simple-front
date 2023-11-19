@@ -21,31 +21,7 @@
         <div class="px-5">هفت روز هفته، ۲۴ ساعت شبانه‌روز پاسخگوی شما هستیم.</div>
       </div>
     </div>
-    <div>
-      <div class="d-flex justify-content-around pt-3 border-bottom">
-        <a class="d-flex flex-column align-items-center">
-          <div>
-            <!-- <img src="@/assets/2.jpeg" height="46" alt="" /> -->
-          </div>
-          <div class="py-4">ضمانت هفت روز بازگشت کالا</div>
-        </a><a class="d-flex flex-column align-items-center">
-          <div>
-            <!-- <img src="@/assets/3.jpeg" height="46" alt="" /> -->
-          </div>
-          <div class="py-3">پرداخت امن اینترنتی</div>
-        </a><a class="d-flex flex-column align-items-center">
-          <div>
-            <!-- <img src="@/assets/4.jpeg" height="46" alt="" /> -->
-          </div>
-          <div class="py-4">ضمانت کیفیت کالا</div>
-        </a><a class="d-flex flex-column align-items-center">
-          <div>
-            <!-- <img src="@/assets/1.jpeg" height="46" alt="" /> -->
-          </div>
-          <div class="py-4">ارسال رایگان بالای ۱ میلیون</div>
-        </a>
-      </div>
-    </div>
+   
     <div class="row rtl">
       <div class="mt-5">
         <div class="px-3">
@@ -77,7 +53,7 @@
             ></a> -->
           </div>
           <div class="d-flex flex-column align-items-end ms-4 mb-3 ">
-              <a href="https://rootakhti-yazd.ir/api/shop/enamad/" class=" d-flex flex-column align-items-center border rounded-10 p-2" style="">
+              <a href="http://127.0.0.1:8000/api/shop/enamad/" class=" d-flex flex-column align-items-center border rounded-10 p-2" style="">
                 <img src="/enamad.png" style="width:70px">
                 <div class="d-flex flex-column align-items-center pt-2">
                

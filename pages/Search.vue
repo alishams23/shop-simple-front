@@ -45,13 +45,16 @@
               <div v-if="loading == false && data1 != [] && data1.results.length == 0
                 " class="d-flex justify-content-canter flex-row">
                 <div class="col-12 text-center pt-9">
-                  محصولی برای نمایش وجود ندارد
+                  <div class="alert alert-info" role="alert">
+                    محصولی برای نمایش وجود ندارد
+                  </div>
                 </div>
+                
               </div>
               <div class="pd-middle space-v1">
                 <ul class="pagination">
                   <li v-if="data1.previous != null">
-                    <a @click="page -= 1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    <a @click="pageNumber -= 1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                           d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
@@ -59,7 +62,7 @@
                   </li>
 
                   <li v-if="data1.next != null">
-                    <a @click="page += 1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
+                    <a @click="pageNumber += 1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
                         class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                           d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
@@ -95,35 +98,24 @@
                 <div class="filter-price filter-inside pe-3">
                   <div class="filter-content pt-4">
                     <div data-role="rangeslider">
+                
                       <label for="price-min pb-5 mb-5">قیمت به تومان:</label>
                       <div class="py-4"></div>
-                      <Slider v-model="value" :max="max" class="ltr slider-blue" />
+                      <Slider v-model="valuePrice" :max="max" class="ltr slider-blue" />
 
                       <br />
                     </div>
                     <div class="form-check pb-4 pt-4">
-                      <input class="form-check-input pointer" type="checkbox" value="" v-model="isDiscount"
+                   
+                      <input class="form-check-input pointer" type="checkbox"  v-model="isDiscount"
                         id="isDiscount" checked />
                       <label class="form-check-label" for="isDiscount">
                         فقط کالا های دارای تخفیف
                       </label>
                     </div>
-                    <!-- <div class="form-check pb-4 pt-4">
-                      <input class="form-check-input pointer" type="checkbox" value="" v-model="isStock" id="isStock"
-                        checked />
-                      <label class="form-check-label" for="isStock">
-                        فقط کالا های استوک
-                      </label>
-                    </div>
+               
                     <div class="form-check pb-4 pt-4">
-                      <input class="form-check-input pointer" type="checkbox" value="" v-model="is_people" id="is_people"
-                        checked />
-                      <label class="form-check-label" for="is_people">
-                        محصولات مشتریان
-                      </label>
-                    </div> -->
-                    <div class="form-check pb-4 pt-4">
-                      <input class="form-check-input pointer" type="checkbox" value="" v-model="isExist" id="isExist"
+                      <input class="form-check-input pointer" type="checkbox"  v-model="isExist" id="isExist"
                         checked />
                       <label class="form-check-label" for="isExist">
                         فقط کالا های موجود
@@ -133,13 +125,13 @@
                   </div>
                 </div>
               </div>
-              <div class="filter filter-cate ltr scrollBarStyleSmall" style="max-height:300px;overflow-y:scroll">
-                <div class="rtl">
+              <div class="filter filter-cate  scrollBarStyleSmall" style="max-height:300px;overflow-y:scroll">
+                <div class="">
                   <h1 class="widget-blog-title py-4 px-3">شرکت سازنده</h1>
                   <div class="p-4">
                     <div class="d-flex justify-content-center">
                       <div v-show="data.id == currentCompany" v-for="data in company" v-bind:key="data"
-                        class="px-4 bg-dark text-white  py-2 my-3 rounded-10">
+                        class="px-4 bg-dark text-white rounded-3  py-2 my-3 rounded-10">
                         {{ data.title }}
                       </div>
                     </div>
@@ -148,7 +140,7 @@
                   </div>
 
                   <ul class="wiget-content v2">
-                    <li v-bind:class="data.id == currentCompany ? 'btn-gradient' : ''
+                    <li v-bind:class="data.id == currentCompany ? 'bg-custom-gradient text-white' : ''
                       " v-for="data in company" v-bind:key="data" @click="
     currentCompany == data.id
       ? (currentCompany = null)
@@ -165,7 +157,7 @@
                 <div class="p-4">
                   <div class="d-flex justify-content-center">
                     <div v-show="data.id == currentCategory" v-for="data in categories" v-bind:key="data"
-                      class="px-4 bg-dark text-white  py-2 my-3 rounded-10">
+                      class="px-4 bg-dark text-white  py-2 my-3 rounded-3">
                       {{ data.title }}
                     </div>
                   </div>
@@ -174,7 +166,7 @@
                 </div>
 
                 <ul class="wiget-content v2">
-                  <li v-bind:class="data.id == currentCategory ? 'btn-gradient' : ''
+                  <li v-bind:class="data.id == currentCategory ? 'bg-custom-gradient text-white' : ''
                     " v-for="data in categories" v-bind:key="data" @click="
     currentCategory == data.id
       ? (currentCategory = null)
@@ -208,13 +200,13 @@ export default {
     Slider,
     Product,
   },
-  props: ["searchText", "idCategory", "isStockName", "is_peopleName"],
+  props: [ "idCategory", ],
   data() {
     return {
       data1: [],
       max: 10000000,
-      value: [0, 10000000],
-      is_people: null,
+      valuePrice: [0, 10000000],
+      searchText : this.$route.query.text,
       isDiscount: null,
       isExist: null,
       categories: [],
@@ -222,8 +214,8 @@ export default {
       textCategory: "",
       currentCategory: null,
       loading: true,
-      page: 1,
-      isStock: null,
+      pageNumber: 1,
+
       nameRoute: this.$route.name,
       filter: false,
       mouseScroll: false,
@@ -239,11 +231,6 @@ export default {
     if (this.idCategory != null) {
       this.currentCategory = this.idCategory;
     }
-    if (this.isStockName == "false") this.isStock = false;
-    if (this.isStockName == "true") this.isStock = true;
-    if (this.is_peopleName == "false") this.is_people = false;
-    if (this.is_peopleName == "true") this.is_people = true;
-
     this.searchData();
     this.getCategories();
     this.getCompany();
@@ -254,21 +241,21 @@ export default {
       this.data1 = [];
       this.loading = true;
 
-      let urlAddress = `https://rootakhti-yazd.ir/api/shop/searchlistview/?search`;
+      let urlAddress = `http://127.0.0.1:8000/api/shop/searchlistview/?search`;
       if (this.searchText != null) urlAddress += `=${this.searchText}`;
       if (this.currentCategory != null)
         urlAddress += `&category=${this.currentCategory}`;
       if (this.currentCompany != null)
         urlAddress += `&company=${this.currentCompany}`;
-      urlAddress += `&page=${this.page}`;
+      urlAddress += `&page=${this.pageNumber}`;
 
-      if (this.value[1] != 10000000)
-        urlAddress += `&max_price=${this.value[1]}`;
-      if (this.value[1] != 0) urlAddress += `&min_price=${this.value[0]}`;
+      if (this.valuePrice[1] != 10000000)
+        urlAddress += `&max_price=${this.valuePrice[1]}`;
+      if (this.valuePrice[1] != 0) urlAddress += `&min_price=${this.valuePrice[0]}`;
       if (this.isDiscount == true) urlAddress += `&min_discount=1`;
       if (this.isExist == true) urlAddress += `&min_amount=1`;
-      if (this.isStock == true) urlAddress += `&is_stock=${this.isStock}`;
-      if (this.is_people == true) urlAddress += `&is_people=${this.is_people}`;
+      
+    
       let mydata = await axios
         .get(urlAddress)
         .then((response) => (this.data1 = response.data));
@@ -276,7 +263,7 @@ export default {
     },
     async getCategories() {
       let mydata = await axios
-        .get(`https://rootakhti-yazd.ir/api/shop/Categories_api/`)
+        .get(`http://127.0.0.1:8000/api/shop/Categories_api/`)
         .then((response) => {
           this.categories = response.data;
           this.categoriesInstance = response.data;
@@ -284,7 +271,7 @@ export default {
     },
     async getCompany() {
       let mydata = await axios
-        .get(`https://rootakhti-yazd.ir/api/shop/Company_list/`)
+        .get(`http://127.0.0.1:8000/api/shop/Company_list/`)
         .then((response) => {
           this.company = response.data;
           this.companyInstance = response.data;
@@ -327,54 +314,51 @@ export default {
   },
   watch: {
     searchText: function (val) {
-      this.page = 1;
+      this.pageNumber = 1;
       this.searchData();
     },
-    page: function (val) {
+    pageNumber: function (val) {
       this.searchData();
     },
     isDiscount: function (val) {
-      this.page = 1;
+      this.pageNumber = 1;
+      this.searchData();
+
     },
     isExist: function (val) {
-      this.page = 1;
+      this.pageNumber = 1;
+      this.searchData();
+
     },
     categories: function (val) {
-      this.page = 1;
+      this.pageNumber = 1;
+      this.searchData();
+
     },
     currentCompany: function (val) {
-      this.page = 1;
+      this.pageNumber = 1;
+      this.searchData();
+
     },
     currentCategory: function (val) {
-      this.page = 1;
+      this.pageNumber = 1;
+      this.searchData();
+
     },
-    isStock: function (val) {
-      this.page = 1;
+    valuePrice: function (val) {
+      this.pageNumber = 1;
+      this.searchData();
+
     },
-    is_people: function (val) {
-      this.page = 1;
-    },
+ 
     idCategory: function (val) {
-      this.isStock = false;
-      this.page = 1;
+      
+      this.pageNumber = 1;
       if (this.idCategory != null) this.currentCategory = this.idCategory;
-      if (this.$route.name == "stocks") this.isStock = true;
+   
       this.searchData();
     },
-    isStockName: function (val) {
-      if (this.isStockName == "false") this.isStock = false;
-      if (this.isStockName == "true") {
-        this.isStock = true;
-        this.searchData();
-      }
-    },
-    is_peopleName: function (val) {
-      if (this.is_peopleName == "false") this.is_people = false;
-      if (this.is_peopleName == "true") {
-        this.is_people = true;
-        this.searchData();
-      }
-    },
+  
   },
 };
 </script>

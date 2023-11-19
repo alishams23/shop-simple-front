@@ -19,7 +19,7 @@
           </div>
           <div class="mymodal-footer">
             <div class="d-flex">
-              <button type="submit" class="px-4 py-2 rounded-10 py-2 text-white btn btn-gradient">
+              <button type="submit" class="px-4 py-2 rounded-10 py-2 text-white btn bg-custom-gradient">
                 <div v-if="loadingSMS == false">ارسال</div>
                 <div class="d-flex flex-column align-items-center" v-if="loadingSMS == true">
                   <div class="loader-light"></div>
@@ -97,7 +97,7 @@ export default {
     async SendSms() {
       this.loadingSend = true;
       try {
-        await fetch("https://rootakhti-yazd.ir/api/shop/Send_code/", {
+        await fetch("http://127.0.0.1:8000/api/shop/Send_code/", {
         headers: {
           "Content-type": "application/json",
           Accept: "application/json",
@@ -119,7 +119,7 @@ export default {
         if (this.code != null) {
           this.statusCheck = false;
           let statusCheckApi = await fetch(
-            `https://rootakhti-yazd.ir/api/shop/Code_check/?code=${this.code}`,
+            `http://127.0.0.1:8000/api/shop/Code_check/?code=${this.code}`,
             {
               headers: {
                 "Content-type": "application/json",

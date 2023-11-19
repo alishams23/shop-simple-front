@@ -4,7 +4,6 @@
     :class="dNone == true ? 'd-none' : ''"
     v-if="categories != null"
   >
-  
     <div class="mymodal    " :class="modal == true ? 'open' : ''">
       <div class="mymodal-overlay" @click="modal = false;modalFunction()"></div>
       <div class="mymodal-card">
@@ -63,8 +62,7 @@
               v-bind:key="data"
             >
               <button
-                v-show="data.id == indexActive && !(data2.hide_product && textPage == 'محصولات') && !(data2.hide_stock && textPage == 'استوک') && !(data2.hide_people_product && textPage == 'محصولات مشتریان')"
-
+                v-show="data.id == indexActive && !(data2.hide_product && textPage == 'محصولات')  "
                 class="m-3 p-2 border-bottom btn button-active"
                 v-for="data2 in data.main_category"
                 v-bind:key="data2"

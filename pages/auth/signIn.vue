@@ -94,7 +94,7 @@ export default {
               
               try {
                  let mydata =await axios
-                .post("https://rootakhti-yazd.ir/api/shop/login/",{"username":this.UserName,"password":this.Password})
+                .post("http://127.0.0.1:8000/api/shop/login/",{"username":this.UserName,"password":this.Password})
                 .then((response) => ( this.$store.commit('login',response.data.token)));
                  this.$router.push("/")
               } catch (error) {

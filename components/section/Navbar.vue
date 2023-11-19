@@ -193,21 +193,17 @@ export default {
     },
     async getCategories() {
       let mydata = await axios
-        .get("https://rootakhti-yazd.ir/api/shop/Category_main_api/")
+        .get("http://127.0.0.1:8000/api/shop/Category_main_api/")
         .then((response) => (this.categories = response.data));
     },
     async getCategoriesBlog() {
       let mydata = await axios
-        .get("https://rootakhti-yazd.ir/api/blog/Category_main_api/")
+        .get("http://127.0.0.1:8000/api/blog/Category_main_api/")
         .then((response) => (this.categoriesBlog = response.data));
     },
     search() {
       this.scrollToTop();
-
-      this.$router.push({
-        name: "Search",
-        params: { searchText: this.searchText },
-      });
+      this.$router.push(`/search/?text=${this.searchText}`);
     },
     go_category(value) {
       this.scrollToTop();
@@ -260,9 +256,6 @@ export default {
         params: { isStockName: false, is_peopleName: false },
       });
     },
-  
-
-
     openmymodalNavbar() {
       document.querySelector(".mymodal-check").classList.add("open");
     },

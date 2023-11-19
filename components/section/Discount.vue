@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-between mb-4">
           <div class="text-white px-5  py-2 fw-bold mt-3 fs-3 text-right rtl">پیشنهاد های شگفت انگیز </div>
         </div>
-          <Carousel class="mx-3" v-bind="settings" :breakpoints="breakpoints">
+          <Carousel :autoplayLoop="true"  class="mx-3" v-bind="settings" :breakpoints="breakpoints">
             <Slide v-for="item in data" :key="item">
               <router-link tag="div" v-bind:to="`/product/${item.id}`" class="product-item mx-2 section2-item ">
                 <Product v-bind:data="item" />
@@ -33,7 +33,8 @@ export default {
       data: [], settings: {
         itemsToShow: 1,
         snapAlign: 'center',
-        wrapAround:true
+        wrapAround:true ,
+   
       },
       // breakpoints are mobile first
       // any settings not specified will fallback to the carousel settings
@@ -46,7 +47,7 @@ export default {
         // 1024 and up
         1024: {
           itemsToShow: 5,
-          snapAlign: 'start',
+          snapAlign: 'center',
         },
       },
     };
@@ -59,7 +60,7 @@ export default {
     async getData() {
 
       let mydata = await axios
-        .get("https://rootakhti-yazd.ir/api/shop/category_discount/")
+        .get("http://127.0.0.1:8000/api/shop/category_discount/")
         .then((response) => (this.data = response.data.results));
 
 

@@ -370,7 +370,7 @@
               };
         let mydata = await axios
           .get(
-            `https://rootakhti-yazd.ir/api/shop/retrieveProduct/${this.$route.params.id}/`,
+            `http://127.0.0.1:8000/api/shop/retrieveProduct/${this.$route.params.id}/`,
             header
           )
           .then((response) => (this.data1 = response.data));
@@ -391,7 +391,7 @@
         if (this.comment != "") {
           let mydata = await axios
             .post(
-              `https://rootakhti-yazd.ir/api/shop/comment/${this.$route.params.id}/`,
+              `http://127.0.0.1:8000/api/shop/comment/${this.$route.params.id}/`,
               { title: this.comment },
               {
                 headers: {
@@ -414,7 +414,7 @@
   
         try {
           await axios
-            .get(`https://rootakhti-yazd.ir/api/shop/order_add/${this.data1.id}/`, {
+            .get(`http://127.0.0.1:8000/api/shop/order_add/${this.data1.id}/`, {
               headers: {
                 "Content-type": "application/json",
                 Accept: "application/json",
@@ -430,7 +430,7 @@
         try {
           await axios
             .get(
-              `https://rootakhti-yazd.ir/api/shop/order_remove/${this.data1.id}/`,
+              `http://127.0.0.1:8000/api/shop/order_remove/${this.data1.id}/`,
               {
                 headers: {
                   "Content-type": "application/json",
@@ -445,12 +445,12 @@
         } catch (error) {}
       },shareLink(dataValue) {
         let input = document.body.appendChild(document.createElement("input"));
-        input.value = `https://rootakhti-yazd.ir/product/${dataValue}`;
+        input.value = `http://127.0.0.1:8000/product/${dataValue}`;
         input.focus();
         input.select();
         document.execCommand("copy");
         input.parentNode.removeChild(input);
-        alert(`https://rootakhti-yazd.ir/product/${dataValue} کپی شد.`);
+        alert(`http://127.0.0.1:8000/product/${dataValue} کپی شد.`);
       },
       price(value){
         let text

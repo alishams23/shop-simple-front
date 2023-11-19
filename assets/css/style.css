@@ -8697,27 +8697,7 @@ button.close {
     box-shadow: 0px 2px 20px 2px rgba(255, 64, 100, 0.68);
 }
 
-.btn-gradient,
-.product-tab-sw li a:hover,
-.product-tab-sw li.active a,
-.product-tab-sw2 li a:hover,
-.product-tab-sw2 li.active a {
-    color: #fff;
-    font-weight: 500;
-    background: #54f0ff;
-    background-image: linear-gradient(122deg, #c26af5, #54f0ff);
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-}
 
-.btn-gradient:hover,
-.product-tab-sw li a:hover,
-.product-tab-sw2 li a:hover {
-    color: #fff;
-    -webkit-box-shadow: 0px 2px 20px 2px rgba(194, 106, 245, 0.68);
-    box-shadow: 0px 2px 20px 2px rgba(194, 106, 245, 0.68);
-}
 
 .h-ribbon {
     width: 40px;
@@ -26307,5 +26287,3 @@ footer .f-top [class*="col-xs-"] {
     }
 }
 
-
-/*# sourceMappingURL=style.css.map */
