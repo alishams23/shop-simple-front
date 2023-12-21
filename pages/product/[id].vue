@@ -340,6 +340,7 @@
 
 
   import axios from "axios";
+import { useUserStore } from '~/store/user'; 
   
   export default {
   
@@ -356,6 +357,12 @@
     mounted() {
       this.getData();
     },
+    computed: {
+    token() {
+      return useUserStore().userToken;
+
+    }
+  },
     methods: {
       async getData() {
         let header =
@@ -365,7 +372,7 @@
                 headers: {
                   "Content-type": "application/json",
                   Accept: "application/json",
-                  Authorization: this.$store.state.token ? `Token ${this.$store.state.token}` : '',
+                  Authorization: this.token ? `Token ${this.token}` : '',
                 },
               };
         let mydata = await axios
@@ -397,7 +404,7 @@
                 headers: {
                   "Content-type": "application/json",
                   Accept: "application/json",
-                  Authorization: `Token ${this.$store.state.token}`,
+                  Authorization: `Token ${this.token}`,
                 },
               }
             )
@@ -418,7 +425,7 @@
               headers: {
                 "Content-type": "application/json",
                 Accept: "application/json",
-                Authorization: `Token ${this.$store.state.token}`,
+                Authorization: `Token ${this.token}`,
               },
             })
             .then((response) => {
@@ -435,7 +442,7 @@
                 headers: {
                   "Content-type": "application/json",
                   Accept: "application/json",
-                  Authorization: `Token ${this.$store.state.token}`,
+                  Authorization: `Token ${this.token}`,
                 },
               }
             )

@@ -3,11 +3,15 @@
 </template>
 
 <script>
+import { useUserStore } from '~/store/user'; 
+
 export default {
     name:'Logout',
     mounted(){
-    this.$store.commit("logout")
-    this.$router.push("/login")
+      const userStore = useUserStore();
+
+      userStore.logout()
+    this.$router.push("/auth/signIn")
     }
 }
 </script>

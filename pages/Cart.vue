@@ -186,15 +186,16 @@
         </div>
       </div>
     </form>
-    <sms />
+
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import sms from '../components/sms.vue'
+import { useUserStore } from '~/store/user'; 
+
 export default {
-  components: { sms, },
+
   data() {
     return {
       data1: null,
@@ -209,6 +210,12 @@ export default {
       loadingSubmit: false,
     };
   },
+  computed: {
+    token() {
+      return useUserStore().userToken;
+
+    }
+  },
   mounted() {
     this.getData();
   },
@@ -220,7 +227,7 @@ export default {
           headers: {
             "Content-type": "application/json",
             Accept: "application/json",
-            Authorization: `Token ${this.$store.state.token}`,
+            Authorization: `Token ${this.token}`,
           },
         })
         .then((response) => {
@@ -250,7 +257,7 @@ export default {
             headers: {
               "Content-type": "application/json",
               Accept: "application/json",
-              Authorization: `Token ${this.$store.state.token}`,
+              Authorization: `Token ${this.token}`,
             },
           })
           .then((response) => {
@@ -265,7 +272,7 @@ export default {
             headers: {
               "Content-type": "application/json",
               Accept: "application/json",
-              Authorization: `Token ${this.$store.state.token}`,
+              Authorization: `Token ${this.token}`,
             },
           })
           .then((response) => {
@@ -289,7 +296,7 @@ export default {
             headers: {
               "Content-type": "application/json",
               Accept: "application/json",
-              Authorization: `Token ${this.$store.state.token}`,
+              Authorization: `Token ${this.token}`,
             },
           }
         )
@@ -309,7 +316,7 @@ export default {
                 headers: {
                   "Content-type": "application/json",
                   Accept: "application/json",
-                  Authorization: `Token ${this.$store.state.token}`,
+                  Authorization: `Token ${this.token}`,
                 },
               }
             )

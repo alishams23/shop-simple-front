@@ -39,13 +39,18 @@ export default {
       // breakpoints are mobile first
       // any settings not specified will fallback to the carousel settings
       breakpoints: {
-        // 700px and up
-        700: {
-          itemsToShow: 3.5,
+          // 600px and up
+          600: {
+          itemsToShow: 2,
           snapAlign: 'center',
         },
-        // 1024 and up
-        1024: {
+        // 1000px and up
+        1000: {
+          itemsToShow: 4,
+          snapAlign: 'center',
+        },
+        // 1300 and up
+        1300: {
           itemsToShow: 5,
           snapAlign: 'center',
         },

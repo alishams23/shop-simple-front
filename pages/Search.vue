@@ -121,7 +121,7 @@
                         فقط کالا های موجود
                       </label>
                     </div>
-                    <a @click="searchData()" class="btn-filter rounded-10 nabz-gradient pointer">فیلتر کردن</a>
+                    <a @click="searchData()" class="btn-filter rounded-10 bg-custom-gradient pointer">فیلتر کردن</a>
                   </div>
                 </div>
               </div>
@@ -200,13 +200,14 @@ export default {
     Slider,
     Product,
   },
-  props: [ "idCategory", ],
+ 
   data() {
     return {
       data1: [],
       max: 10000000,
       valuePrice: [0, 10000000],
       searchText : this.$route.query.text,
+      idCategory : this.$route.query.idCategory,
       isDiscount: null,
       isExist: null,
       categories: [],
@@ -317,6 +318,19 @@ export default {
       this.pageNumber = 1;
       this.searchData();
     },
+    idCategory: function (val) {
+      
+      this.pageNumber = 1;
+      if (this.idCategory != null) this.currentCategory = this.idCategory;
+   
+      this.searchData();
+    },
+    $route(to, from) {
+  
+        this.idCategory = to.query.idCategory
+        this.searchText = to.query.text
+      
+    },
     pageNumber: function (val) {
       this.searchData();
     },
@@ -351,13 +365,7 @@ export default {
 
     },
  
-    idCategory: function (val) {
-      
-      this.pageNumber = 1;
-      if (this.idCategory != null) this.currentCategory = this.idCategory;
    
-      this.searchData();
-    },
   
   },
 };

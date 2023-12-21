@@ -1,7 +1,7 @@
 <template>
   <div
-    class="d-none"
-    :class="dNone == true ? 'd-none' : ''"
+    class="bg-white"
+    :class="modal == true ? '' : 'd-none'"
     v-if="categories != null"
   >
     <div class="mymodal    " :class="modal == true ? 'open' : ''">
@@ -9,7 +9,7 @@
       <div class="mymodal-card">
         <div class="mymodal-body rtl d-flex flex-row">
           <div
-            class="col-6 m-0 border-left scrollBarStyleSmall"
+            class="col-6 px-3 border border-bottom-0  m-0 border-left scrollBarStyleSmall"
             style="
               
               overflow: hidden;
@@ -17,7 +17,7 @@
             "
           >
             <div
-              class="px-2 text-center fw-bold py-3"
+              class="px-2 rounded-10  text-center fw-bold py-3"
               v-for="data in categories"
               v-bind:key="data"
         v-show="!(data.hide_product && textPage == 'محصولات') && !(data.hide_stock && textPage == 'استوک') && !(data.hide_people_product && textPage == 'محصولات مشتریان')"
@@ -25,7 +25,7 @@
               @mouseover="indexActive = data.id"
               v-bind:class="
                 indexActive == data.id
-                  ? ' mx-2 ml-0 btn w-100 border-none  fs-5 nabz-gradient'
+                  ? ' mx-2 ml-0 btn w-100 border-none  fs-5 bg-custom-gradient'
                   : ' mx-2 ml-0 '
               "
             >
@@ -43,7 +43,7 @@
             <div class="fw-bold fs-4 p-4 d-flex">
               <div
                 style="width: 2.5px"
-                class="rounded-pill py-2 mx-2 nabz-gradient"
+                class="rounded-pill py-2 mx-2 bg-custom-gradient"
               ></div>
               <div class="py-2">{{ textPage }}</div>
               <router-link

@@ -34,7 +34,7 @@
                                   <textarea id="message" class="form-control bdr3" name="comment[body]" rows="10" placeholder="پیام شما..."></textarea>
                             </div>
                               <div class="form-group">
-                                  <button type="submit" class="btn btn-submit nabz-gradient">
+                                  <button type="submit" class="btn btn-submit bg-custom-gradient">
                                       ارسال پیام
                                   </button>
                               </div>

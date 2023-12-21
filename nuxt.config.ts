@@ -11,7 +11,9 @@ export default defineNuxtConfig({
 devServer: {
   port: 3002,
 },
+
 modules: [
-  'vue3-carousel-nuxt'
+  'vue3-carousel-nuxt',
+  '@pinia/nuxt'
 ]
 })

@@ -14,25 +14,22 @@
                 <div class="form-group text-right">
                   <label for="author" class="py-4">شماره تلفن خود را وارد کنید<span class="f-red">*</span></label>
                   <input type="text" id="author" class="form-control rounded-10"   placeholder="شماره تلفن" 
-                  v-model="UserName" :class="{'is-invalid':UserNameE===true, 'is-valid':UserNameE===false, }" />
+                  v-model="UserName"  />
                   <div class="invalid-feedback">
                     {{UserNameEM}}
                   </div>
-
-
-
                   <label class="py-4" for="passwordinput"> رمز عبور خود را وارد کنید <span class="f-red">*</span></label>
                   <input type="password" id="passwordinput" class="form-control rounded-10" placeholder="رمز عبور"
-                  v-model="Password" :class="{ 'is-invalid':PasswordE===true, 'is-valid':PasswordE===false, }" />
+                  v-model="Password"  />
                   <div class="invalid-feedback">
                     {{PasswordEM}}
                   </div>
                 </div>
                 <div class="flex lr">
-                  <button type="submit" class="btn btn-submit  rounded-10 px-5 py-3 nabz-gradient">ورود</button>
+                  <button type="submit" class="btn btn-submit  rounded-10 px-5 py-3 bg-custom-gradient">ورود</button>
                 </div>
               </form>
-              <router-link to="/register" class="btn-lostpwd spc">از قبل اکانتی ندارم</router-link>
+              <router-link to="/auth/signUp/" class="btn-lostpwd spc">از قبل اکانتی ندارم</router-link>
             </div>
           </div>
         </div>
@@ -42,6 +39,7 @@
 
 
 <script>
+import { useUserStore } from '~/store/user'; 
 import axios from 'axios';
 export default {
     name:'Login',
@@ -63,6 +61,8 @@ export default {
     },
     methods:{
         async doLogin() {
+      const userStore = useUserStore();
+
           this.generalError=""
             let access=true
             if (this.UserName.length < 4) {
@@ -95,14 +95,13 @@ export default {
               try {
                  let mydata =await axios
                 .post("https://rootakhti-yazd.ir/api/shop/login/",{"username":this.UserName,"password":this.Password})
-                .then((response) => ( this.$store.commit('login',response.data.token)));
+                .then((response) => ( userStore.saveTokenInCookie(response.data.token)));
+                userStore.loadTokenFromCookie();
+
                  this.$router.push("/")
               } catch (error) {
                  this.generalError="رمز عبور یا نام کاربری اشتباه است"
                  }
-             
-                
-           
             }
         }
     }
