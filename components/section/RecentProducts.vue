@@ -1,6 +1,6 @@
 <template>
   <div>
-            <div class="gradient-animation-2  pb-5 ">
+            <div class="gradient-red  pb-5 ">
         <div class=" pt-5 container">
         <div class="d-flex justify-content-end mb-4">  <div class="text-white px-5   fw-bold mt-3 fs-2">محصولات اخیر</div> </div>
 

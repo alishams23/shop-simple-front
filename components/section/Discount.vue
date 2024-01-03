@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="gradient-animation-1 my-4 pb-5">
+    <div class="gradient-red my-4 pb-5">
       <div class="pt-4 container">
         <div class="d-flex justify-content-between mb-4">
           <div class="text-white px-5  py-2 fw-bold mt-3 fs-3 text-right rtl">پیشنهاد های شگفت انگیز </div>
@@ -96,10 +96,16 @@ export default {
   -webkit-box-orient: vertical;
 }
 
-.gradient-animation-1 {
+ .gradient-animation-1 {
   background: linear-gradient(-45deg, #ee7752, #ff0263, #5823d5, #232cd5);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
+} 
+
+.gradient-red {
+  background: linear-gradient(-45deg, #e20132, #fb3a84);
+
+
 }
 
 @keyframes gradient {

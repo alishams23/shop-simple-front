@@ -416,8 +416,8 @@ import { useUserStore } from '~/store/user';
         this.closemymodal();
       },
       async addToCard() {
-        if (this.$store.state.isAuthenticated == false)
-          this.$router.push("/login");
+        if (!this.token)
+          this.$router.push("/auth/signIn");
   
         try {
           await axios

@@ -180,7 +180,6 @@ export default {
         .get("https://rootakhti-yazd.ir/api/shop/Category_main_api/")
         .then((response) => (this.categories = response.data));
     },
-
     search() {
       this.scrollToTop();
       this.$router.push(`/search/?text=${this.searchText}`);
@@ -201,16 +200,9 @@ export default {
       this.$router.push(`/search/?idCategory=${value}`);
 
     },
-
-
-
-
     productModalFunction() {
       this.productModal = false;
     },
-
-
-
   },
 };
 </script>
@@ -285,7 +277,7 @@ input {
 
   display: block;
   content: "";
-  border-bottom: solid 2px #000288;
+  border-bottom: solid 2px #d00127;
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
